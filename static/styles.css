@@ -10,3 +10,7 @@
   display: grid;
   grid-template-columns: auto auto;
 }
+
+.checked {
+  color: gray;
+}

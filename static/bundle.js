@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./client/component/EmptyStar.jsx":
+/*!****************************************!*\
+  !*** ./client/component/EmptyStar.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst EmptyStar = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", { \"class\": \"fa fa-star checked\" });\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (EmptyStar);\n\n//# sourceURL=webpack:///./client/component/EmptyStar.jsx?");
+
+/***/ }),
+
 /***/ "./client/component/Review.jsx":
 /*!*************************************!*\
   !*** ./client/component/Review.jsx ***!
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst ReviewComment = props => {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    \"div\",\n    { className: \"reviewComment\" },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      \"div\",\n      null,\n      \"Rating: \",\n      props.user.rating\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      \"div\",\n      null,\n      \"Comment: \",\n      props.user.message\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ReviewComment);\n\n//# sourceURL=webpack:///./client/component/ReviewComment.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _SolidStar_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SolidStar.jsx */ \"./client/component/SolidStar.jsx\");\n/* harmony import */ var _EmptyStar_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./EmptyStar.jsx */ \"./client/component/EmptyStar.jsx\");\n\n\n\n\nconst ReviewComment = props => {\n  let stars = [];\n  for (var i = 0; i < 5; i++) {\n    if (i <= props.user.rating) {\n      stars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SolidStar_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n    } else {\n      stars.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EmptyStar_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n    }\n  }\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    { className: 'reviewComment' },\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      null,\n      'Rating:',\n      stars.map(star => {\n        return star;\n      })\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'div',\n      null,\n      'Comment: ',\n      props.user.message\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ReviewComment);\n\n//# sourceURL=webpack:///./client/component/ReviewComment.jsx?");
 
 /***/ }),
 
@@ -131,6 +143,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst ReviewInfo = props => {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n    'div',\n    null,\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'span',\n      null,\n      props.user.name\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'li',\n      null,\n      'Eye Color: ',\n      props.user.eyeColor\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'li',\n      null,\n      'Hair Color: ',\n      props.user.hairColor\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'li',\n      null,\n      'Skin Tone: ',\n      props.user.skinTone\n    ),\n    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\n      'li',\n      null,\n      'Skin Type: ',\n      props.user.skinType\n    )\n  );\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ReviewInfo);\n\n//# sourceURL=webpack:///./client/component/ReviewInfo.jsx?");
+
+/***/ }),
+
+/***/ "./client/component/SolidStar.jsx":
+/*!****************************************!*\
+  !*** ./client/component/SolidStar.jsx ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst SolidStar = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", { \"class\": \"fa fa-star\" });\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (SolidStar);\n\n//# sourceURL=webpack:///./client/component/SolidStar.jsx?");
 
 /***/ }),
 
