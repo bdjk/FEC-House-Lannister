@@ -17,3 +17,13 @@ app.use(express.static(path.resolve(__dirname, '../static')));
 app.listen(PORT, () => {
   console.log('App is listening on PORT:', PORT);
 });
+
+app.get('/review', (req, res) => {
+  db.find((err, data) => {
+    if (err) {
+      res.status(404).send(err)
+    } else {
+      res.status(200).send(data)
+    }
+  })
+})

@@ -1,0 +1,12 @@
+.reviewInfo {
+  display: grid;
+}
+
+/* .reviewComment {
+  display: grid;
+  grid-template-columns: auto auto
+} */
+.review {
+  display: grid;
+  grid-template-columns: auto auto;
+}
