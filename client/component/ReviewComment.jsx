@@ -5,7 +5,7 @@ import EmptyStar from './EmptyStar.jsx';
 const ReviewComment = props => {
   let stars = [];
   for (var i = 0; i < 5; i++) {
-    if (i <= props.user.rating) {
+    if (i <= props.user.rating - 1) {
       stars.push(<SolidStar/>)
     } else {
       stars.push(<EmptyStar/>)
