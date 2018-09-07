@@ -6,9 +6,9 @@ const ReviewComment = props => {
   let stars = [];
   for (var i = 0; i < 5; i++) {
     if (i <= props.user.rating - 1) {
-      stars.push(<SolidStar/>)
+      stars.push(<SolidStar key={i}/>)
     } else {
-      stars.push(<EmptyStar/>)
+      stars.push(<EmptyStar key={i}/>)
     }
   }
   return (
