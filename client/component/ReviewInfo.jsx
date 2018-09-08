@@ -1,15 +1,21 @@
 import React from 'react';
+import User from './User.jsx';
 
 const ReviewInfo = props => {
-  return (
-    <div>
-      <span>{props.user.name}</span>
-      <li>Eye Color: {props.user.eyeColor}</li>
-      <li>Hair Color: {props.user.hairColor}</li>
-      <li>Skin Tone: {props.user.skinTone}</li>
-      <li>Skin Type: {props.user.skinType}</li>
+  return (<div>
+    <div className='user'>
+      <img className='userPicture' src={props.user.picture}/>
+      <User user={props.user}/>
     </div>
-  )
+    <div>
+      <info>Eye Color</info>: {props.user.eyeColor}</div>
+    <div>
+      <info>Hair Color</info>: {props.user.hairColor}</div>
+    <div>
+      <info>Skin Tone</info>: {props.user.skinTone}</div>
+    <div>
+      <info>Skin Type</info>: {props.user.skinType}</div>
+  </div>)
 }
 
 export default ReviewInfo;

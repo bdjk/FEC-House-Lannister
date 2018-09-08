@@ -19,7 +19,7 @@
 
 .review {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 400px auto;
 }
 
 .checked {
@@ -28,6 +28,20 @@
 
 .percent {
   font-size: 48px;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 40px auto;
+}
+
+info {
+  font-weight: bold;
+}
+
+.userPicture {
+  width: 35px;
+  height: 35px;
 }
 
 div {
