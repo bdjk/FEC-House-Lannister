@@ -18,7 +18,11 @@ var sephoraSchema = new mongoose.Schema({
   skinTone: String,
   skinType: String,
   rating: Number,
-  message: String
+  message: String,
+  rank1: String,
+  rank2: String,
+  helpful: Number,
+  recommends: Boolean
 });
 
 var Sephora = mongoose.model('Sephora', sephoraSchema);

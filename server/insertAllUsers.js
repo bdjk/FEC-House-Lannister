@@ -12,7 +12,11 @@ var insertAllUsers = function() {
       skinTone: user.skinTone,
       skinType: user.skinType,
       rating: user.rating,
-      message: user.message
+      message: user.message,
+      rank1: user.rank1,
+      rank2: user.rank2,
+      helpful: user.helpful,
+      recommends: user.recommends
     }).save((err) => {
       if (err) {
         console.log('err');

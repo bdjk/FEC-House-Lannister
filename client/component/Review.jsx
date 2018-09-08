@@ -19,27 +19,24 @@ class Review extends React.Component {
   getUsers() {
     axios.get('/review').then((users) => {
       console.log('got users', users.data)
-      this.setState({
-        users: users.data
-      })
+      this.setState({users: users.data})
     })
   }
 
   render() {
-    return (
-      <div>
-        {this.state.users.map((user, i) => (
-          <div key={i} className='review'>
-            <div className='reviewInfo'>
-              <ReviewInfo user={user}/>
-            </div>
-            <div className=''>
-              <ReviewComment user={user}/>
-            </div>
+    return (<div>
+      {
+        this.state.users.map((user, i) => (<div key={i} className='review'>
+          <div className='reviewInfo'>
+            <ReviewInfo user={user}/>
           </div>
-        ))}
-      </div>
-    )
+          <div className=''>
+            <ReviewComment user={user}/>
+          </div>
+          <hr/>
+        </div>))
+      }
+    </div>)
   }
 }
 
