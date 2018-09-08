@@ -4,7 +4,7 @@ import Rating from './Rating.jsx'
 
 const App = props => {
   return (<div>
-    <h1>Ratings & Reviews</h1>
+    <h1 className='header'>Ratings & Reviews</h1>
     <Rating/>
     <hr/>
     <Review/>

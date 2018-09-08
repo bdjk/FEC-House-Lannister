@@ -1,9 +1,16 @@
-.RatingBar {
-  display: inline;
+.rating {
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
-.RatingStar {
-  display: inline;
+.ratingStar {
+  padding-top: 15%;
+  text-align: center;
+}
+
+.ratingPercent {
+  padding-top: 10%;
+  text-align: center;
 }
 
 .reviewInfo {
@@ -19,8 +26,20 @@
   color: #A9A9A9;
 }
 
+.percent {
+  font-size: 48px;
+}
+
 div {
   font-family: Helvetica;
+  font-weight: lighter;
+  font-size: 12pt;
+}
+
+.header {
+  font-size: 24px;
+  text-align: center;
+  font-family: georgia, times, serif;
   font-weight: lighter;
 }
 
@@ -38,6 +57,10 @@ div {
 }
 
 /* Place text to the right */
+.right {
+  text-align: justify;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -47,7 +70,7 @@ div {
 
 /* The bar container */
 .bar-container {
-  width: 500px;
+  width: 100%;
   background-color: #f1f1f1;
   text-align: left;
   color: white;

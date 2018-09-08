@@ -13,11 +13,14 @@ const RatingStar = props => {
   }
 
   return (<div className="reviewComment">
-    <div>Rating:{
+    <div>{
         stars.map(star => {
           return star;
         })
       }</div>
+    <div>
+      3/5 stars
+    </div>
   </div>)
 }
 

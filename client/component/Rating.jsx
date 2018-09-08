@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import RatingBar from './RatingBar.jsx';
 import RatingStar from './RatingStar.jsx';
+import RatingPercent from './RatingPercent.jsx';
 
 class Rating extends React.Component {
   constructor(props) {
@@ -24,12 +25,15 @@ class Rating extends React.Component {
   }
 
   render() {
-    return (<div>
-      <div className='RatingBar'>
+    return (<div className='rating'>
+      <div>
         <RatingBar/>
       </div>
-      <div className='RatingStar'>
+      <div className='ratingStar'>
         <RatingStar/>
+      </div>
+      <div className='ratingPercent'>
+        <RatingPercent/>
       </div>
     </div>)
   }
