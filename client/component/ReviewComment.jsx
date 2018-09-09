@@ -11,16 +11,26 @@ const ReviewComment = props => {
       stars.push(<EmptyStar key={i}/>)
     }
   }
-  return (
-    <div className="reviewComment">
-      <div>Rating:{
+  return (<div className="reviewComment">
+    <div>Rating:{
         stars.map(star => {
           return star;
         })
       }</div>
-      <div>Comment: {props.user.message}</div>
+    <div>Comment: {props.user.message}</div>
+    <div>
+      {
+        props.user.recommends
+          ? (<div>
+            <svg viewBox="0 0 11 5">
+              <path className='checkMark' d="M1.3 3.6L0 4.8 3.4 8 11 1.2 9.7 0 3.4 5.6"></path>
+            </svg>
+            <span>Recommends this product</span>
+          </div>)
+          : <div></div>
+      }
     </div>
-  )
+  </div>)
 }
 
 export default ReviewComment;

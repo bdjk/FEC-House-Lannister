@@ -39,6 +39,12 @@ info {
   font-weight: bold;
 }
 
+svg {
+  width: 1em;
+  height: 1em;
+  fill: #6be023;
+}
+
 .userPicture {
   width: 35px;
   height: 35px;
