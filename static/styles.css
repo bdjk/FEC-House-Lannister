@@ -66,9 +66,45 @@ info {
   margin-right: 15px;
 }
 
+.filter:hover .dropArrowSvg {
+  fill: gray;
+}
+
+.filter:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.sort:hover .dropArrowSvg {
+  fill: gray;
+}
+
+.sort:hover {
+  cursor: pointer;
+  color: gray;
+}
+
 .userPicture {
   width: 35px;
   height: 35px;
+}
+
+#filterBar {
+  display: none;
+}
+
+.filterTypes {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.divider {
+  display: block;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #A9A9A9;
 }
 
 div {

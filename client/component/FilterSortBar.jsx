@@ -1,27 +1,58 @@
 import React from 'react';
+import axios from 'axios';
 
-const FilterSortBar = props => {
-  return (<div>
-    <span className="filter">
-      <span>Filter</span>
-      <span className="dropArrow">
-        <svg viewBox="0 0 95 25" className="dropArrowSvg">
-          <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
-        </svg>
+class FilterSortBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: []
+    }
+    this.getUsers = this.getUsers.bind(this)
+  }
+
+  componentDidMount() {
+    this.getUsers()
+  }
+
+  getUsers() {
+    axios.get('/review').then((users) => {
+      console.log('got users', users.data)
+      this.setState({users: users.data})
+    })
+  }
+
+  showFilterBar() {
+    var x = document.getElementById("filterBar");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
+  render() {
+    return (<div>
+      <span className="filter" onClick={this.showFilterBar}>
+        <span>Filter</span>
+        <span className="dropArrow">
+          <svg viewBox="0 0 95 25" className="dropArrowSvg">
+            <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
+          </svg>
+        </span>
       </span>
-    </span>
-    <span className='verticalBorder'></span>
-    <span className='sort'>
-      <span>Sort by:&nbsp;
-        <b>Most Helpful</b>
+      <span className='verticalBorder'></span>
+      <span className='sort'>
+        <span>Sort by:&nbsp;
+          <b>Most Helpful</b>
+        </span>
+        <span className="dropArrow">
+          <svg viewBox="0 0 95 25" className="dropArrowSvg">
+            <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
+          </svg>
+        </span>
       </span>
-      <span className="dropArrow">
-        <svg viewBox="0 0 95 25" className="dropArrowSvg">
-          <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
-        </svg>
-      </span>
-    </span>
-  </div>)
+    </div>)
+  }
 }
 
 export default FilterSortBar;
