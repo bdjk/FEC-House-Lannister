@@ -8,7 +8,10 @@ const App = props => {
     <h1 className='header'>Ratings & Reviews</h1>
     <Rating/>
     <br/>
-    <FilterSortBar/>
+    <div className="filterSortBar">
+      <FilterSortBar/>
+    </div>
+    <br/>
     <hr/>
     <Review/>
   </div>)

@@ -39,6 +39,10 @@ info {
   font-weight: bold;
 }
 
+.filterSortBar {
+  float: right;
+}
+
 .checkMark {
   width: 1em;
   height: 1em;
@@ -53,6 +57,13 @@ info {
 
 .dropArrow {
   margin: 10px;
+}
+
+.verticalBorder {
+  border-left: 1px solid gray;
+  height: 500px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .userPicture {
