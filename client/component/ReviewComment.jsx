@@ -22,8 +22,8 @@ const ReviewComment = props => {
       {
         props.user.recommends
           ? (<div>
-            <svg viewBox="0 0 11 5">
-              <path className='checkMark' d="M1.3 3.6L0 4.8 3.4 8 11 1.2 9.7 0 3.4 5.6"></path>
+            <svg className='checkMark' viewBox="0 0 11 5">
+              <path d="M1.3 3.6L0 4.8 3.4 8 11 1.2 9.7 0 3.4 5.6"></path>
             </svg>
             <span>Recommends this product</span>
           </div>)

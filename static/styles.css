@@ -39,10 +39,20 @@ info {
   font-weight: bold;
 }
 
-svg {
+.checkMark {
   width: 1em;
   height: 1em;
   fill: #6be023;
+}
+
+.dropArrowSvg {
+  width: 1em;
+  height: 1em;
+  fill: black;
+}
+
+.dropArrow {
+  margin: 10px;
 }
 
 .userPicture {
