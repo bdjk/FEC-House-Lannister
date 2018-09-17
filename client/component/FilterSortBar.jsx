@@ -5,9 +5,11 @@ class FilterSortBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      boo: false,
       users: []
     }
     this.getUsers = this.getUsers.bind(this)
+    this.showSortBar = this.showSortBar.bind(this)
   }
 
   componentDidMount() {
@@ -30,6 +32,13 @@ class FilterSortBar extends React.Component {
     }
   }
 
+  showSortBar() {
+    //document.getElementById("sortBar").classList.toggle("sortBar");
+    var opposite = !this.state.boo;
+    this.setState({boo: opposite})
+    console.log('hi')
+  }
+
   render() {
     return (<div>
       <span className="filter" onClick={this.showFilterBar}>
@@ -41,7 +50,7 @@ class FilterSortBar extends React.Component {
         </span>
       </span>
       <span className='verticalBorder'></span>
-      <span className='sort'>
+      <span className='sort' onClick={this.showSortBar}>
         <span>Sort by:&nbsp;
           <b>Most Helpful</b>
         </span>
@@ -51,6 +60,15 @@ class FilterSortBar extends React.Component {
           </svg>
         </span>
       </span>
+      <br/> {
+        this.state.boo
+          ? <div id="sortBar">
+              <div>Item 1</div>
+              <div>Item 2</div>
+              <div>Item 3</div>
+            </div>
+          : <div></div>
+      }
     </div>)
   }
 }
