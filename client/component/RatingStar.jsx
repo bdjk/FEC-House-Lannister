@@ -1,6 +1,7 @@
 import React from 'react';
 import SolidStar from './SolidStar.jsx';
 import EmptyStar from './EmptyStar.jsx';
+import StarRatings from 'react-star-ratings';
 
 const RatingStar = props => {
   let stars = [];
@@ -12,14 +13,15 @@ const RatingStar = props => {
     }
   }
 
-  return (<div className="reviewComment">
-    <div>{
-        stars.map(star => {
-          return star;
-        })
-      }</div>
+  let avgStar = props.users.map(user => {
+    return user.rating
+  }).reduce((acc, val) => acc + val, 0) / 100;
+  //console.log('avgStar', avgStar)
+
+  return (<div>
+    <StarRatings rating={avgStar} starRatedColor="black" numberOfStars={5} name='rating' starDimension='20px' starSpacing='0px'/>
     <div>
-      3/5 stars
+      {avgStar}/5 stars
     </div>
   </div>)
 }

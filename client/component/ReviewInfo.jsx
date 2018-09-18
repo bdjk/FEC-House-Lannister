@@ -8,13 +8,13 @@ const ReviewInfo = props => {
       <User user={props.user}/>
     </div>
     <div>
-      <info>Eye Color</info>: {props.user.eyeColor}</div>
+      <b>Eye Color</b>: {props.user.eyeColor}</div>
     <div>
-      <info>Hair Color</info>: {props.user.hairColor}</div>
+      <b>Hair Color</b>: {props.user.hairColor}</div>
     <div>
-      <info>Skin Tone</info>: {props.user.skinTone}</div>
+      <b>Skin Tone</b>: {props.user.skinTone}</div>
     <div>
-      <info>Skin Type</info>: {props.user.skinType}</div>
+      <b>Skin Type</b>: {props.user.skinType}</div>
   </div>)
 }
 

@@ -36,7 +36,6 @@ class FilterSortBar extends React.Component {
     //document.getElementById("sortBar").classList.toggle("sortBar");
     var opposite = !this.state.boo;
     this.setState({boo: opposite})
-    console.log('hi')
   }
 
   render() {
@@ -63,9 +62,9 @@ class FilterSortBar extends React.Component {
       <br/> {
         this.state.boo
           ? <div id="sortBar">
-              <div>Item 1</div>
-              <div>Item 2</div>
-              <div>Item 3</div>
+              <div>Most Helpful</div>
+              <div>Highest Rating</div>
+              <div>Lowest Rating</div>
             </div>
           : <div></div>
       }

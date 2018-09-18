@@ -35,10 +35,6 @@
   grid-template-columns: 40px auto;
 }
 
-info {
-  font-weight: bold;
-}
-
 .filterSortBar {
   float: right;
 }

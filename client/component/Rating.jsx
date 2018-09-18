@@ -27,13 +27,13 @@ class Rating extends React.Component {
   render() {
     return (<div className='rating'>
       <div>
-        <RatingBar/>
+        <RatingBar users={this.state.users}/>
       </div>
       <div className='ratingStar'>
-        <RatingStar/>
+        <RatingStar users={this.state.users}/>
       </div>
       <div className='ratingPercent'>
-        <RatingPercent/>
+        <RatingPercent users={this.state.users}/>
       </div>
     </div>)
   }
