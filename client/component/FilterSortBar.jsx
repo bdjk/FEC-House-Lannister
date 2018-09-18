@@ -48,7 +48,7 @@ class FilterSortBar extends React.Component {
           </svg>
         </span>
       </span>
-      <span className='verticalBorder'></span>
+      <span className='filterSortVerticalBorder'></span>
       <span className='sort' onClick={this.showSortBar}>
         <span>Sort by:&nbsp;
           <b>Most Helpful</b>
