@@ -98,6 +98,11 @@ const Styles = styles.div `
   color: gray;
 }
 
+.sortOptions {
+  padding: 10px 10px 10px 10px;
+  color:black;
+}
+
 .sortOptions:hover {
   color: gray;
   cursor: pointer;
@@ -156,9 +161,10 @@ const Styles = styles.div `
 #sortBar {
   display: grid;
   float: right;
+  right: 0;
   margin-top: 5px;
   margin-right: 10px;
-  position: relative;
+  position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

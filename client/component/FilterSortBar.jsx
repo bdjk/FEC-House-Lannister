@@ -55,6 +55,7 @@ class FilterSortBar extends React.Component {
         </span>
       </span>
       <span className='filterSortVerticalBorder'></span>
+
       <span className='sort' onClick={this.showSortBar}>
         <span>Sort by:&nbsp;
           <b>{this.state.sortKey}</b>
@@ -64,25 +65,27 @@ class FilterSortBar extends React.Component {
             <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
           </svg>
         </span>
+        <div>
+          {
+            this.state.boo
+              ? <div id="sortBar">
+                  <div className="sortOptions" onClick={() => {
+                      this.props.sortByHelpful();
+                      this.changeSortKey('Most Helpful');
+                    }}>Most Helpful</div>
+                  <div className="sortOptions" onClick={() => {
+                      this.props.sortByHighest();
+                      this.changeSortKey('Highest Rating');
+                    }}>Highest Rating</div>
+                  <div className="sortOptions" onClick={() => {
+                      this.props.sortByLowest();
+                      this.changeSortKey('Lowest Rating');
+                    }}>Lowest Rating</div>
+                </div>
+              : <div></div>
+          }
+        </div>
       </span>
-      <br/> {
-        this.state.boo
-          ? <div id="sortBar">
-              <div className="sortOptions" onClick={() => {
-                  this.props.sortByHelpful();
-                  this.changeSortKey('Most Helpful');
-                }}>Most Helpful</div>
-              <div className="sortOptions" onClick={() => {
-                  this.props.sortByHighest();
-                  this.changeSortKey('Highest Rating');
-                }}>Highest Rating</div>
-              <div className="sortOptions" onClick={() => {
-                  this.props.sortByLowest();
-                  this.changeSortKey('Lowest Rating');
-                }}>Lowest Rating</div>
-            </div>
-          : <div></div>
-      }
     </div>)
   }
 }
