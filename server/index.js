@@ -31,7 +31,7 @@ app.get('/review', (req, res) => {
 app.get('/specific', (req, res) => {
   //console.log('getting specific users', req.query.spec)
   db.find({
-    eyeColor: req.query.spec
+    [req.query.spec1]: req.query.spec2
   }, (err, data) => {
     if (err) {
       res.status(404).send(err)

@@ -46,11 +46,12 @@ class App extends React.Component {
     this.setState({skinType: opposite})
   }
 
-  getSpecificUsers(spec) {
-    console.log('get em', spec)
+  getSpecificUsers(spec1, spec2) {
+    console.log('get em', spec2)
     axios.get('/specific', {
       params: {
-        spec: spec
+        spec1: spec1,
+        spec2: spec2
       }
     }).then((users) => {
       console.log('got specific users', users.data)
@@ -81,7 +82,7 @@ class App extends React.Component {
                 this.state.eyeColor
                   ? <div id="eyeColorOptions">
                       <div className="choice" onClick={() => {
-                          this.getSpecificUsers('blue')
+                          this.getSpecificUsers('eyeColor', 'blue')
                         }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-blue.png" height="26px" width="26px"/>Blue</div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers()
