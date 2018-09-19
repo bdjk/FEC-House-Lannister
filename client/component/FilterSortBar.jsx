@@ -72,15 +72,28 @@ class FilterSortBar extends React.Component {
                   <div className="sortOptions" onClick={() => {
                       this.props.sortByHelpful();
                       this.changeSortKey('Most Helpful');
-                    }}>Most Helpful</div>
+                    }}>{
+                      this.state.sortKey === 'Most Helpful'
+                        ? <b>Most Helpful</b>
+                        : <div>Most Helpful</div>
+                    }
+                  </div>
                   <div className="sortOptions" onClick={() => {
                       this.props.sortByHighest();
                       this.changeSortKey('Highest Rating');
-                    }}>Highest Rating</div>
+                    }}>{
+                      this.state.sortKey === 'Highest Rating'
+                        ? <b>Highest Rating</b>
+                        : <div>Highest Rating</div>
+                    }</div>
                   <div className="sortOptions" onClick={() => {
                       this.props.sortByLowest();
                       this.changeSortKey('Lowest Rating');
-                    }}>Lowest Rating</div>
+                    }}>{
+                      this.state.sortKey === 'Lowest Rating'
+                        ? <b>Lowest Rating</b>
+                        : <div>Lowest Rating</div>
+                    }</div>
                 </div>
               : <div></div>
           }
