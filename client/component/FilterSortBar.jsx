@@ -40,7 +40,7 @@ class FilterSortBar extends React.Component {
   }
 
   changeSortKey(key) {
-    console.log('change key')
+    //console.log('change key')
     this.setState({sortKey: key})
   }
 

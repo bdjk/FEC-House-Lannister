@@ -32,7 +32,8 @@ class App extends React.Component {
   getUsers() {
     axios.get('/review').then((users) => {
       console.log('got users IN APP', users.data)
-      this.setState({users: users.data})
+      this.setState({users: users.data});
+      this.sortByHelpful();
     })
   }
 
@@ -74,19 +75,18 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('sorted', prevState.users, this.state.users)
+    //console.log(prevState.users, this.state.users)
     if (JSON.toString(prevState.users) !== JSON.toString(this.state.users)) {
-      console.log('not the same')
+      //console.log('not the same')
       this.setState({users: this.state.users})
     }
   }
 
   sortByHelpful() {
-    console.log('most helpful', this.state.users)
+    console.log('most helpful')
     var sorted = this.state.users.sort((a, b) => {
       return b.helpful - a.helpful
     })
-    console.log(sorted)
     this.setState({users: sorted})
   }
 
