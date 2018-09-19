@@ -3,6 +3,7 @@ import Review from './Review.jsx';
 import Rating from './Rating.jsx';
 import FilterSortBar from './FilterSortBar.jsx';
 import EyeColor from './EyeColor.jsx';
+import Styles from '../styles.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<Styles>
       <h1 className='header'>Ratings & Reviews</h1>
       <Rating/>
       <br/>
@@ -148,7 +149,7 @@ class App extends React.Component {
       </div>
       <div className='divider'></div>
       <Review/>
-    </div>)
+    </Styles>)
   }
 }
 

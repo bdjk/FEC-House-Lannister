@@ -1,3 +1,6 @@
+import styles from 'styled-components'
+
+const Styles = styles.div `
 .rating {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -294,3 +297,5 @@ div {
     display: none;
   }
 }
+`
+export default Styles;
