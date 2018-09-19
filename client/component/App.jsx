@@ -2,7 +2,6 @@ import React from 'react';
 import Review from './Review.jsx';
 import Rating from './Rating.jsx';
 import FilterSortBar from './FilterSortBar.jsx';
-import EyeColor from './EyeColor.jsx';
 import Styles from '../styles.js';
 import axios from 'axios';
 
@@ -95,22 +94,32 @@ class App extends React.Component {
                   ? <div id="eyeColorOptions">
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('eyeColor', 'blue')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-blue.png" height="26px" width="26px"/>Blue</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-blue.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Blue</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('eyeColor', 'brown')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-brown.png" height="26px" width="26px"/>Brown</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-brown.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Brown</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('eyeColor', 'green')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-green.png" height="26px" width="26px"/>Green</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-green.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Green</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('eyeColor', 'gray')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-grey.png" height="26px" width="26px"/>Gray</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-grey.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Gray</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('eyeColor', 'hazel')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-hazel.png" height="26px" width="26px"/>Hazel</div>
-                      <div className="choice" onClick={() => {
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/eyecolor-hazel.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Hazel</span>
+                      </div>
+                      <button className="buttonChoice" onClick={() => {
                           this.getSpecificUsers()
-                        }}>RESET</div>
+                        }}>RESET</button>
                     </div>
                   : <div></div>
               }
@@ -129,25 +138,37 @@ class App extends React.Component {
                 ? <div id="hairColorOptions">
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'blonde')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-blonde.png" height="26px" width="26px"/>Blonde</div>
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-blonde.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Blonde</span>
+                    </div>
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'brunette')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-brunette.png" height="26px" width="26px"/>Brunette</div>
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-brunette.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Brunette</span>
+                    </div>
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'auburn')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-auburn.png" height="26px" width="26px"/>Auburn</div>
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-auburn.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Auburn</span>
+                    </div>
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'black')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-black.png" height="26px" width="26px"/>Black</div>
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-black.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Black</span>
+                    </div>
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'red')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-red.png" height="26px" width="26px"/>Red</div>
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-red.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Red</span>
+                    </div>
                     <div className="choice" onClick={() => {
                         this.getSpecificUsers('hairColor', 'gray')
-                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-gray.png" height="26px" width="26px"/>Gray</div>
-                    <div className="choice" onClick={() => {
+                      }}><img src="https://www.sephora.com/img/ufe/rich-profile/haircolor-gray.png" height="26px" width="26px"/>
+                      <span className="wordChoice">Gray</span>
+                    </div>
+                    <button className="buttonChoice" onClick={() => {
                         this.getSpecificUsers()
-                      }}>RESET</div>
+                      }}>RESET</button>
                   </div>
                 : <div></div>
             }
@@ -166,34 +187,52 @@ class App extends React.Component {
                   ? <div id="skinToneOptions">
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'porcelain')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-porcelain.png" height="26px" width="26px"/>Porcelain</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-porcelain.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Porcelain</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'fair')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-fair.png" height="26px" width="26px"/>Fair</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-fair.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Fair</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'light')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-light.png" height="26px" width="26px"/>Light</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-light.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Light</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'medium')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-medium.png" height="26px" width="26px"/>Medium</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-medium.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Medium</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'tan')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-tan.png" height="26px" width="26px"/>Tan</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-tan.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Tan</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'olive')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-olive.png" height="26px" width="26px"/>Olive</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-olive.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Olive</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'deep')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-deep.png" height="26px" width="26px"/>Deep</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-deep.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Deep</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'dark')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-dark.png" height="26px" width="26px"/>Dark</div>
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-dark.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Dark</span>
+                      </div>
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinTone', 'ebony')
-                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-ebony.png" height="26px" width="26px"/>Ebony</div>
-                      <div className="choice" onClick={() => {
+                        }}><img src="https://www.sephora.com/img/ufe/rich-profile/skintone-ebony.png" height="26px" width="26px"/>
+                        <span className="wordChoice">Ebony</span>
+                      </div>
+                      <button className="buttonChoice" onClick={() => {
                           this.getSpecificUsers()
-                        }}>RESET</div>
+                        }}>RESET</button>
                     </div>
                   : <div></div>
               }
@@ -223,9 +262,9 @@ class App extends React.Component {
                       <div className="choice" onClick={() => {
                           this.getSpecificUsers('skinType', 'oily')
                         }}>Oily</div>
-                      <div className="choice" onClick={() => {
+                      <button className="buttonChoice" onClick={() => {
                           this.getSpecificUsers()
-                        }}>RESET</div>
+                        }}>RESET</button>
                     </div>
                   : <div></div>
               }

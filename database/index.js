@@ -27,15 +27,15 @@ var sephoraSchema = new mongoose.Schema({
 
 var Sephora = mongoose.model('Sephora', sephoraSchema);
 
-let find = (spec, callback) => {
-  Todo.find(spec, (err, data) => {
-    //console.log('in data', spec)
-    if (err) {
-      callback(err, null)
-    } else {
-      callback(null, data)
-    }
-  })
-}
+// let find = (spec, callback) => {
+//   Sephora.find(spec, (err, data) => {
+//     //console.log('in data', spec)
+//     if (err) {
+//       callback(err, null)
+//     } else {
+//       callback(null, data)
+//     }
+//   })
+// }
 
 module.exports = Sephora;

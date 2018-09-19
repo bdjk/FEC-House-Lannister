@@ -33,17 +33,21 @@ class Review extends React.Component {
 
   render() {
     return (<div>
-      {
-        this.state.users.map((user, i) => (<div key={i} className='review'>
-          <div className='reviewInfo'>
-            <ReviewInfo user={user}/>
-          </div>
-          <div className=''>
-            <ReviewComment user={user}/>
-          </div>
-          <hr/>
-        </div>))
-      }
+      <div>
+        {
+          this.state.users.map((user, i) => (<div>
+            <div key={i} className='review'>
+              <div className='reviewInfo'>
+                <ReviewInfo user={user}/>
+              </div>
+              <div className=''>
+                <ReviewComment user={user}/>
+              </div>
+            </div>
+            <div className='userDivider'></div>
+          </div>))
+        }
+      </div>
     </div>)
   }
 }

@@ -42,6 +42,14 @@ const Styles = styles.div `
   float: right;
 }
 
+.recommends {
+  padding-top: 70px;
+}
+
+.recommendsText {
+  font-size: 10pt;
+}
+
 .checkMark {
   width: 1em;
   height: 1em;
@@ -200,6 +208,70 @@ const Styles = styles.div `
   z-index: 1;
 }
 
+.choice {
+  margin: 10px 10px 10px 10px;
+}
+
+.choice:hover {
+  color: gray;
+}
+
+.wordChoice {
+  padding-left: 10px;
+}
+
+.buttonChoice {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #000;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 35px;
+    -moz-appearance: none;
+    padding-right: 12px;
+    padding-left: 12px;
+    transition: opacity .2s;
+}
+
+.buttonHelpful {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #000;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: currentcolor;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-height: 35px;
+    -moz-appearance: none;
+    padding-right: 12px;
+    padding-left: 12px;
+    transition: opacity .2s;
+}
+
+.buttonHelpful:hover {
+  color: gray;
+}
+
 .topDivider {
   display: block;
   margin-bottom: 16px;
@@ -207,6 +279,15 @@ const Styles = styles.div `
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #A9A9A9;
+}
+
+.userDivider {
+  display: block;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.063);
 }
 
 .divider {
