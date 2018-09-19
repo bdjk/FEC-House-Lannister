@@ -27,8 +27,9 @@ var sephoraSchema = new mongoose.Schema({
 
 var Sephora = mongoose.model('Sephora', sephoraSchema);
 
-let find = (callback) => {
-  Todo.find({}, (err, data) => {
+let find = (spec, callback) => {
+  Todo.find(spec, (err, data) => {
+    //console.log('in data', spec)
     if (err) {
       callback(err, null)
     } else {

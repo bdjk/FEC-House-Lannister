@@ -200,6 +200,15 @@ const Styles = styles.div `
   z-index: 1;
 }
 
+.topDivider {
+  display: block;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #A9A9A9;
+}
+
 .divider {
   display: block;
   margin-bottom: 16px;

@@ -39,7 +39,7 @@ class FilterSortBar extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<div className="space">
       <span className="filter" onClick={this.showFilterBar}>
         <span>Filter</span>
         <span className="dropArrow">

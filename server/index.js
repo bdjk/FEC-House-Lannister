@@ -19,7 +19,20 @@ app.listen(PORT, () => {
 });
 
 app.get('/review', (req, res) => {
-  db.find((err, data) => {
+  db.find({}, (err, data) => {
+    if (err) {
+      res.status(404).send(err)
+    } else {
+      res.status(200).send(data)
+    }
+  })
+})
+
+app.get('/specific', (req, res) => {
+  //console.log('getting specific users', req.query.spec)
+  db.find({
+    eyeColor: req.query.spec
+  }, (err, data) => {
     if (err) {
       res.status(404).send(err)
     } else {
