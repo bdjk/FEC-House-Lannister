@@ -9,19 +9,27 @@ class Review extends React.Component {
     this.state = {
       users: []
     }
-    this.getUsers = this.getUsers.bind(this)
+    //this.getUsers = this.getUsers.bind(this)
   }
 
   componentDidMount() {
-    this.getUsers()
+    //this.getUsers()
+    this.setState({users: this.props.users})
   }
 
-  getUsers() {
-    axios.get('/review').then((users) => {
-      console.log('got users', users.data)
-      this.setState({users: users.data})
-    })
+  componentDidUpdate(prevProps, prevState) {
+    //console.log('updated', prevState, this.props.users)
+    if (prevState.users !== this.props.users) {
+      this.setState({users: this.props.users})
+    }
   }
+  //
+  // getUsers() {
+  //   axios.get('/review').then((users) => {
+  //     console.log('got users', users.data)
+  //     this.setState({users: users.data})
+  //   })
+  // }
 
   render() {
     return (<div>
