@@ -98,6 +98,11 @@ const Styles = styles.div `
   color: gray;
 }
 
+.sortOptions:hover {
+  color: gray;
+  cursor: pointer;
+}
+
 .eyeColor:hover .dropArrowSvg {
   fill: gray;
 }

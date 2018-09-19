@@ -6,7 +6,8 @@ class FilterSortBar extends React.Component {
     super(props);
     this.state = {
       boo: false,
-      users: []
+      users: [],
+      sortKey: 'Most Helpful'
     }
     this.getUsers = this.getUsers.bind(this)
     this.showSortBar = this.showSortBar.bind(this)
@@ -38,6 +39,11 @@ class FilterSortBar extends React.Component {
     this.setState({boo: opposite})
   }
 
+  changeSortKey(key) {
+    console.log('change key')
+    this.setState({sortKey: key})
+  }
+
   render() {
     return (<div className="space">
       <span className="filter" onClick={this.showFilterBar}>
@@ -51,7 +57,7 @@ class FilterSortBar extends React.Component {
       <span className='filterSortVerticalBorder'></span>
       <span className='sort' onClick={this.showSortBar}>
         <span>Sort by:&nbsp;
-          <b>Most Helpful</b>
+          <b>{this.state.sortKey}</b>
         </span>
         <span className="dropArrow">
           <svg viewBox="0 0 95 25" className="dropArrowSvg">
@@ -62,9 +68,18 @@ class FilterSortBar extends React.Component {
       <br/> {
         this.state.boo
           ? <div id="sortBar">
-              <div>Most Helpful</div>
-              <div>Highest Rating</div>
-              <div>Lowest Rating</div>
+              <div className="sortOptions" onClick={() => {
+                  this.props.sortByHelpful();
+                  this.changeSortKey('Most Helpful');
+                }}>Most Helpful</div>
+              <div className="sortOptions" onClick={() => {
+                  this.props.sortByHighest();
+                  this.changeSortKey('Highest Rating');
+                }}>Highest Rating</div>
+              <div className="sortOptions" onClick={() => {
+                  this.props.sortByLowest();
+                  this.changeSortKey('Lowest Rating');
+                }}>Lowest Rating</div>
             </div>
           : <div></div>
       }

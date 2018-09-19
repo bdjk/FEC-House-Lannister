@@ -21,6 +21,9 @@ class App extends React.Component {
     this.showSkinType = this.showSkinType.bind(this);
     this.getSpecificUsers = this.getSpecificUsers.bind(this);
     this.getUsers = this.getUsers.bind(this);
+    this.sortByHelpful = this.sortByHelpful.bind(this);
+    this.sortByLowest = this.sortByLowest.bind(this);
+    this.sortByHighest = this.sortByHighest.bind(this);
   }
   componentDidMount() {
     this.getUsers()
@@ -70,13 +73,46 @@ class App extends React.Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log('sorted', prevState.users, this.state.users)
+    if (JSON.toString(prevState.users) !== JSON.toString(this.state.users)) {
+      console.log('not the same')
+      this.setState({users: this.state.users})
+    }
+  }
+
+  sortByHelpful() {
+    console.log('most helpful', this.state.users)
+    var sorted = this.state.users.sort((a, b) => {
+      return b.helpful - a.helpful
+    })
+    console.log(sorted)
+    this.setState({users: sorted})
+  }
+
+  sortByHighest() {
+    console.log('highest rating')
+    var sorted = this.state.users.sort((a, b) => {
+      return b.rating - a.rating
+    })
+    this.setState({users: sorted})
+  }
+
+  sortByLowest() {
+    console.log('lowest rating')
+    var sorted = this.state.users.sort((a, b) => {
+      return a.rating - b.rating
+    })
+    this.setState({users: sorted})
+  }
+
   render() {
     return (<Styles>
       <h1 className='header'>Ratings & Reviews</h1>
       <Rating/>
       <br/>
       <div className="filterSortBar">
-        <FilterSortBar/>
+        <FilterSortBar sortByHelpful={this.sortByHelpful} sortByLowest={this.sortByLowest} sortByHighest={this.sortByHighest}/>
       </div>
       <div className='topDivider'></div>
       <div id='filterBar'>
