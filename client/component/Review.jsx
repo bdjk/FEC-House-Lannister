@@ -43,8 +43,8 @@ class Review extends React.Component {
               <div className=''>
                 <ReviewComment user={user}/>
               </div>
-              <div className='userDivider'></div>
             </div>
+            <div className='userDivider'></div>
           </div>))
         }
       </div>

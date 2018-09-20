@@ -45,7 +45,7 @@ class FilterSortBar extends React.Component {
   }
 
   render() {
-    return (<div className="space">
+    return (<div className="filterSortBar">
       <span className="filter" onClick={this.showFilterBar}>
         <span>Filter</span>
         <span className="dropArrow">
@@ -65,7 +65,7 @@ class FilterSortBar extends React.Component {
             <path d="M47.5 57L95 9.5 85.5 0l-38 38-38-38L0 9.5 47.5 57z"></path>
           </svg>
         </span>
-        <div>
+        <span>
           {
             this.state.boo
               ? <div id="sortBar">
@@ -97,7 +97,7 @@ class FilterSortBar extends React.Component {
                 </div>
               : <div></div>
           }
-        </div>
+        </span>
       </span>
     </div>)
   }

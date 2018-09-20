@@ -1,6 +1,10 @@
 import styles from 'styled-components'
 
 const Styles = styles.div `
+.RatingsAndReviews {
+  margin: 0px 200px 0px 200px;
+}
+
 .rating {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -39,6 +43,8 @@ const Styles = styles.div `
 }
 
 .filterSortBar {
+  display: grid;
+  grid-template-columns: auto auto auto;
   float: right;
 }
 
@@ -68,7 +74,7 @@ const Styles = styles.div `
 
 .filterSortVerticalBorder {
   border-left: 1px solid gray;
-  height: 500px;
+  height: 20px;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -159,9 +165,8 @@ const Styles = styles.div `
 }
 
 #sortBar {
+  color: black;
   display: grid;
-  float: right;
-  right: 0;
   margin-top: 5px;
   margin-right: 10px;
   position: absolute;
@@ -256,6 +261,7 @@ const Styles = styles.div `
 }
 
 .buttonHelpful {
+    float: right;
     display: inline-block;
     cursor: pointer;
     font-size: 11px;
