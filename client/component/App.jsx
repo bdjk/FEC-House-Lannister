@@ -74,19 +74,20 @@ class App extends React.Component {
     })
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    //console.log(prevState.users, this.state.users)
-    if (JSON.toString(prevState.users) !== JSON.toString(this.state.users)) {
-      //console.log('not the same')
-      this.setState({users: this.state.users})
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(prevState.users, this.state.users)
+  //   if (JSON.toString(prevState.users) !== JSON.toString(this.state.users)) {
+  //     console.log('not the same')
+  //     this.setState({users: this.state.users})
+  //   }
+  // }
 
   sortByHelpful() {
-    console.log('most helpful')
+    console.log('most helpful', this.state.users)
     var sorted = this.state.users.sort((a, b) => {
       return b.helpful - a.helpful
     })
+    console.log(sorted)
     this.setState({users: sorted})
   }
 

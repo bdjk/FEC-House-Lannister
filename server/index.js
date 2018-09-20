@@ -42,13 +42,13 @@ app.get('/specific', (req, res) => {
 })
 
 app.post('/helpful', (req, res) => {
-  console.log('IN POST...', req.body.name)
+  //console.log('IN POST...', req.body.name)
   db.updateOne({
     name: req.body.name
   }, {
     helpful: req.body.helpfulCount
   }).then((data) => {
-    console.log(data)
+    //console.log(data)
     res.send('updated!')
   })
 })
