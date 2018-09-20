@@ -6,17 +6,22 @@ const Styles = styles.div `
 }
 
 .rating {
+  margin: 0px 100px 0px 100px;
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
 .ratingStar {
-  padding-top: 15%;
+  padding-top: 23%;
   text-align: center;
 }
 
+.averageStarNumber {
+  padding-top: 8px;
+}
+
 .ratingPercent {
-  padding-top: 10%;
+  padding-top: 15%;
   text-align: center;
 }
 

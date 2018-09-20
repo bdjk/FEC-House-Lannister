@@ -19,9 +19,9 @@ const RatingStar = props => {
   //console.log('avgStar', avgStar)
 
   return (<div>
-    <StarRatings rating={avgStar} starRatedColor="black" numberOfStars={5} name='rating' starDimension='20px' starSpacing='0px'/>
-    <div>
-      {avgStar}/5 stars
+    <StarRatings rating={avgStar} starRatedColor="black" numberOfStars={5} name='rating' starDimension='25px' starSpacing='0px'/>
+    <div className="averageStarNumber">
+      {avgStar}&nbsp;/ 5 stars
     </div>
   </div>)
 }

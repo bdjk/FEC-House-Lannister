@@ -113,6 +113,7 @@ class App extends React.Component {
         <h1 className='header'>Ratings & Reviews</h1>
         <Rating/>
         <br/>
+        <br/>
         <FilterSortBar sortByHelpful={this.sortByHelpful} sortByLowest={this.sortByLowest} sortByHighest={this.sortByHighest}/>
         <div className='topDivider'></div>
         <div id='filterBar'>
