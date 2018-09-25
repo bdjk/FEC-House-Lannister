@@ -33,7 +33,7 @@ class HelpfulButton extends React.Component {
     console.log(this.state.helpfulCount)
     var upvoted = this.state.helpfulCount += 1;
     console.log(upvoted)
-    axios.post('/helpful', {
+    axios.post('http://18.222.167.212:4000/helpful', {
       [spec1]: spec2,
       helpfulCount: upvoted
     })

@@ -18,7 +18,7 @@ class Rating extends React.Component {
   }
 
   getUsers() {
-    axios.get('/review').then((users) => {
+    axios.get('http://18.222.167.212:4000/review').then((users) => {
       console.log('got users', users.data)
       this.setState({users: users.data})
     })

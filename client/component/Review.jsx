@@ -35,7 +35,7 @@ class Review extends React.Component {
     return (<div>
       <div>
         {
-          this.state.users.map((user, i) => (<div key={i}>
+          this.state.users.slice(0, 6).map((user, i) => (<div key={i}>
             <div className='review'>
               <div className='reviewInfo'>
                 <ReviewInfo user={user}/>

@@ -1,18 +1,26 @@
 import styles from 'styled-components'
 
 const Styles = styles.div `
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 .RatingsAndReviews {
   margin: 0px 200px 0px 200px;
+  width: 980px;
 }
 
 .rating {
-  margin: 0px 100px 0px 100px;
+  margin: 0px 0px 0px 0px;
   display: grid;
   grid-template-columns: auto auto auto;
+  width: 980px;
 }
 
 .ratingStar {
-  padding-top: 23%;
+  padding-top: 21%;
   text-align: center;
 }
 

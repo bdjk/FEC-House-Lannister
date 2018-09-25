@@ -1,12 +1,14 @@
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
+const cors = require('cors')
 
 const db = require('../database/index.js');
-const PORT = 3000;
+const PORT = 4000;
 
 const app = express();
 
+app.use(cors());
 app.use(parser.json());
 app.use(parser.urlencoded({
   extended: true
@@ -19,6 +21,7 @@ app.listen(PORT, () => {
 });
 
 app.get('/review', (req, res) => {
+  console.log('whaaaaat?')
   db.find({}, (err, data) => {
     if (err) {
       res.status(404).send(err)
@@ -29,7 +32,7 @@ app.get('/review', (req, res) => {
 })
 
 app.get('/specific', (req, res) => {
-  //console.log('getting specific users', req.query.spec)
+  console.log('getting specific users', req.query)
   db.find({
     [req.query.spec1]: req.query.spec2
   }, (err, data) => {
