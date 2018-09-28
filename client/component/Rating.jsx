@@ -18,22 +18,22 @@ class Rating extends React.Component {
   }
 
   getUsers() {
-    axios.get('http://18.222.167.212:4000/review').then((users) => {
+    axios.get('http://localhost:4000/review').then((users) => {
       console.log('got users', users.data)
-      this.setState({users: users.data})
+      this.setState({ users: users.data })
     })
   }
 
   render() {
     return (<div className='rating'>
       <div>
-        <RatingBar users={this.state.users}/>
+        <RatingBar users={this.state.users} />
       </div>
       <div className='ratingStar'>
-        <RatingStar users={this.state.users}/>
+        <RatingStar users={this.state.users} />
       </div>
       <div className='ratingPercent'>
-        <RatingPercent users={this.state.users}/>
+        <RatingPercent users={this.state.users} />
       </div>
     </div>)
   }

@@ -14,39 +14,39 @@ class HelpfulButton extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (x === 0) {
-      console.log('here')
+      // console.log('here')
       if (prevState.helpfulCount !== this.props.helpfulCount) {
-        this.setState({helpfulCount: this.props.helpfulCount})
+        this.setState({ helpfulCount: this.props.helpfulCount })
       }
       if (prevState.username !== this.props.username) {
-        this.setState({username: this.props.username})
+        this.setState({ username: this.props.username })
       }
     }
     if (x === 1) {
-      this.setState({helpfulCount: this.state.helpfulCount})
+      this.setState({ helpfulCount: this.state.helpfulCount })
       x++;
     }
   }
 
   upvote(spec1, spec2) {
-    console.log('helpful', spec2)
+    // console.log('helpful', spec2)
     console.log(this.state.helpfulCount)
     var upvoted = this.state.helpfulCount += 1;
-    console.log(upvoted)
-    axios.post('http://18.222.167.212:4000/helpful', {
+    // console.log(upvoted)
+    axios.post('http://localhost:4000/helpful', {
       [spec1]: spec2,
       helpfulCount: upvoted
     })
     //console.log(this.state.helpfulCount)
     x++;
-    this.setState({helpfulCount: this.state.helpfulCount})
+    this.setState({ helpfulCount: this.state.helpfulCount })
   }
 
   render() {
     return (<div>
       <button className="buttonHelpful" onClick={() => {
-          this.upvote('name', this.state.username)
-        }}>
+        this.upvote('name', this.state.username)
+      }}>
         Helpful({this.state.helpfulCount})
       </button>
     </div>)

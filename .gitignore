@@ -1,2 +1,4 @@
 static/bundle.js
 node_modules
+data/mongoDB/data.tsv
+data/postgres/data.csv

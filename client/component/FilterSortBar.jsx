@@ -18,9 +18,9 @@ class FilterSortBar extends React.Component {
   }
 
   getUsers() {
-    axios.get('http://18.222.167.212:4000/review').then((users) => {
+    axios.get('http://localhost:4000/review').then((users) => {
       console.log('got users', users.data)
-      this.setState({users: users.data})
+      this.setState({ users: users.data })
     })
   }
 
@@ -36,12 +36,12 @@ class FilterSortBar extends React.Component {
   showSortBar() {
     //document.getElementById("sortBar").classList.toggle("sortBar");
     var opposite = !this.state.boo;
-    this.setState({boo: opposite})
+    this.setState({ boo: opposite })
   }
 
   changeSortKey(key) {
     //console.log('change key')
-    this.setState({sortKey: key})
+    this.setState({ sortKey: key })
   }
 
   render() {
@@ -69,32 +69,32 @@ class FilterSortBar extends React.Component {
           {
             this.state.boo
               ? <div id="sortBar">
-                  <div className="sortOptions" onClick={() => {
-                      this.props.sortByHelpful();
-                      this.changeSortKey('Most Helpful');
-                    }}>{
-                      this.state.sortKey === 'Most Helpful'
-                        ? <b>Most Helpful</b>
-                        : <div>Most Helpful</div>
-                    }
-                  </div>
-                  <div className="sortOptions" onClick={() => {
-                      this.props.sortByHighest();
-                      this.changeSortKey('Highest Rating');
-                    }}>{
-                      this.state.sortKey === 'Highest Rating'
-                        ? <b>Highest Rating</b>
-                        : <div>Highest Rating</div>
-                    }</div>
-                  <div className="sortOptions" onClick={() => {
-                      this.props.sortByLowest();
-                      this.changeSortKey('Lowest Rating');
-                    }}>{
-                      this.state.sortKey === 'Lowest Rating'
-                        ? <b>Lowest Rating</b>
-                        : <div>Lowest Rating</div>
-                    }</div>
+                <div className="sortOptions" onClick={() => {
+                  this.props.sortByHelpful();
+                  this.changeSortKey('Most Helpful');
+                }}>{
+                    this.state.sortKey === 'Most Helpful'
+                      ? <b>Most Helpful</b>
+                      : <div>Most Helpful</div>
+                  }
                 </div>
+                <div className="sortOptions" onClick={() => {
+                  this.props.sortByHighest();
+                  this.changeSortKey('Highest Rating');
+                }}>{
+                    this.state.sortKey === 'Highest Rating'
+                      ? <b>Highest Rating</b>
+                      : <div>Highest Rating</div>
+                  }</div>
+                <div className="sortOptions" onClick={() => {
+                  this.props.sortByLowest();
+                  this.changeSortKey('Lowest Rating');
+                }}>{
+                    this.state.sortKey === 'Lowest Rating'
+                      ? <b>Lowest Rating</b>
+                      : <div>Lowest Rating</div>
+                  }</div>
+              </div>
               : <div></div>
           }
         </span>

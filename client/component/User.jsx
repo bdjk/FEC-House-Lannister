@@ -6,10 +6,10 @@ const User = props => (<div>
   </div>
   <div>
     <span>
-      <img src={props.user.rank1}/>
+      <img src={props.user.rank1} />
     </span>
     <span>
-      <img src={props.user.rank2}/>
+      <img src={props.user.rank2} />
     </span>
   </div>
 </div>)
