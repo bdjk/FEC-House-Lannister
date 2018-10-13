@@ -18,8 +18,7 @@ class FilterSortBar extends React.Component {
   }
 
   getUsers() {
-    axios.get('http://localhost:4000/review').then((users) => {
-      console.log('got users', users.data)
+    axios.get('http://54.212.84.135/review').then((users) => {
       this.setState({ users: users.data })
     })
   }

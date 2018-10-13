@@ -30,8 +30,7 @@ class App extends React.Component {
   }
 
   getUsers() {
-    axios.get('http://localhost:4000/review').then((users) => {
-      console.log('got users IN APP', users.data)
+    axios.get('http://54.212.84.135/review').then((users) => {
       this.setState({ users: users.data });
       this.sortByHelpful();
     })
@@ -63,13 +62,12 @@ class App extends React.Component {
 
   getSpecificUsers(spec1, spec2) {
     //console.log('get em', spec2)
-    axios.get('http://localhost:4000/specific', {
+    axios.get('http://54.212.84.135/specific', {
       params: {
         spec1: spec1,
         spec2: spec2
       }
     }).then((users) => {
-      console.log('got specific users', users.data)
       this.setState({ users: users.data })
     })
   }
@@ -83,16 +81,13 @@ class App extends React.Component {
   // }
 
   sortByHelpful() {
-    console.log('most helpful', this.state.users)
     var sorted = this.state.users.sort((a, b) => {
       return b.helpful - a.helpful
     })
-    console.log(sorted)
     this.setState({ users: sorted })
   }
 
   sortByHighest() {
-    console.log('highest rating')
     var sorted = this.state.users.sort((a, b) => {
       return b.rating - a.rating
     })
@@ -100,7 +95,6 @@ class App extends React.Component {
   }
 
   sortByLowest() {
-    console.log('lowest rating')
     var sorted = this.state.users.sort((a, b) => {
       return a.rating - b.rating
     })

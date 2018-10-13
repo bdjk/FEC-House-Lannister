@@ -29,15 +29,12 @@ class HelpfulButton extends React.Component {
   }
 
   upvote(spec1, spec2) {
-    // console.log('helpful', spec2)
-    console.log(this.state.helpfulCount)
     var upvoted = this.state.helpfulCount += 1;
     // console.log(upvoted)
-    axios.post('http://localhost:4000/helpful', {
+    axios.post('http://54.212.84.135/helpful', {
       [spec1]: spec2,
       helpfulCount: upvoted
     })
-    //console.log(this.state.helpfulCount)
     x++;
     this.setState({ helpfulCount: this.state.helpfulCount })
   }

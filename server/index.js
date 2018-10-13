@@ -1,9 +1,9 @@
 const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 
-const db = require('../database/index.js');
+const { asyncFunc } = require('../database/index.js');
 const PORT = 4000;
 
 const app = express();
@@ -50,20 +50,14 @@ app.post('/review', (req, res) => {
 });
 
 app.get('/review', (req, res) => {
-  console.log('inside get')
-  db.find({})
-    .limit(5)
-    .exec((err, data) => {
-      if (err) {
-        res.status(404).send(err)
-      } else {
-        res.status(200).send(data)
-      }
-    })
+  // console.log('inside get')
+  asyncFunc().collection('sephoras').find({ product_id: 1 }).toArray((err, docs) => {
+    if (err) throw err;
+    res.status(200).send(docs);
+  })
 });
 
 app.put('/review', (req, res) => {
-  console.log('inside put')
   var newUser = {
     "name": req.body.name,
     "picture": req.body.picture,
@@ -78,49 +72,44 @@ app.put('/review', (req, res) => {
     "helpful": req.body.helpful,
     "recommends": req.body.recommends
   }
-  db.findOneAndUpdate({ 'name': req.body.name }, newUser, (err, data) => {
+  asyncFunc().collection('sephoras').findOneAndUpdate({ name: req.params.name }, newUser, (err, docs) => {
     if (err) {
-      res.status(404).send(err)
-    } else {
-      res.status(200).send(data)
+      res.status(404).send(err);
     }
+    res.status(200).send(docs);
   })
 });
 
 app.delete('/review', (req, res) => {
-  console.log('inside delete')
-  db.findOneAndDelete({ 'name': req.body.name }, (err, data) => {
+  asyncFunc().collection('sephoras').deleteOne({ name: req.params.name }, (err, docs) => {
     if (err) {
-      res.status(404).send(err)
-    } else {
-      res.status(200).send(data)
+      res.status(404).send(err);
     }
+    res.status(200).send(docs);
   })
 })
 
 // **********************************************
 
 app.get('/specific', (req, res) => {
-  // console.log('getting specific users', req.query)
-  db.find({
-    [req.query.spec1]: req.query.spec2
-  }, (err, data) => {
-    if (err) {
-      res.status(404).send(err)
-    } else {
-      res.status(200).send(data)
-    }
+  var column = req.query.spec1;
+  var filter = req.query.spec2;
+  asyncFunc().collection('sephoras').find({ $and: [{ product_id: 1 }, { [column]: filter }] }).toArray((err, docs) => {
+    if (err) throw err;
+    res.status(200).send(docs);
   })
 })
 
 app.post('/helpful', (req, res) => {
-  //console.log('IN POST...', req.body.name)
-  db.updateOne({
-    name: req.body.name
-  }, {
+  asyncFunc().collection('sephoras').findOneAndUpdate({ name: req.params.name }, {
+    $set: {
       helpful: req.body.helpfulCount
-    }).then((data) => {
-      //console.log(data)
-      res.send('updated!')
-    })
+    }
+  }, (err, docs) => {
+    if (err) {
+      res.status(404).send(err);
+    }
+    res.status(200).send(docs);
+  })
 })
+

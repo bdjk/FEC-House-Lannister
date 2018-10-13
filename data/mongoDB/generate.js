@@ -5,6 +5,7 @@ const fs = require('fs');
 var stream = fs.createWriteStream("data.tsv");
 let limit = 10000000;
 let i = 0;
+let productIdCount = 1;
 
 var start = now();
 console.log('Starting to generate entries at', start);
@@ -15,8 +16,13 @@ function write() {
   let ok = true;
   do {
     i++;
+    if (i % 6 === 0) {
+      productIdCount++;
+    }
     data = {
+      id: i,
       name: faker.internet.userName() + faker.random.number(),
+      product_id: productIdCount,
       picture: 'https://sephora.i.lithium.com/t5/image/serverpage/avatar-name/default-avatar/avatar-theme/sephora/avatar-collection/sephora/avatar-display-size/profile/version/2?xdesc=1.0',
       eyeColor: faker.random.arrayElement(["blue", "brown", "green", "gray", "hazel"]),
       hairColor: faker.random.arrayElement(["blonde", "brunette", "auburn", "black", "red", "gray"]),
